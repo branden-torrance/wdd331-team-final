@@ -1,0 +1,21 @@
+/* ----------------------------------------------*\
+  #MOON SMALL-VIEW  ENLIGHTENMENT MOON MOLECULES
+\*---------------------------------------------- */
+
+/** 
+ * This section inserts the moon image into the second paragraph within the
+ * section and positions the moon in the middle of that paragraphs on the 
+ * right side and also styles the paragraph to wrap around the moon.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+.preamble p:nth-child(3)::before {
+  @include mixins.breakpoint(small) { /* keeps in small-view */
+    @include mixins.insert-image("images/yellow-moon.svg", $width: 130px,
+    $height: 132px, $float: right, $shape: yes); /* insert moon image to right 
+    & create word wrapping */
+
+    margin-top: 5.625rem; /* position */
+  }
+}

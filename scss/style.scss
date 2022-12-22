@@ -1,0 +1,41 @@
+// SCSS
+
+// import table of contents notes for css file throught ***table-of-contents
+@use "base-units/table-of-contents";
+
+// import the root CSS variables
+@use "base-units/variables-root";
+
+// import the pages reset
+@use "base-units/css-reset";
+
+// import for atoms file through ***atoms
+@use "base-units/atoms";
+
+// import for background scss styles through ***background
+@use "small-large-views/background-organism/background";
+
+// import for header scss styles through ***planet
+@use "small-large-views/planet-organism/planet";
+
+// moon imports 6 files in total
+// import for main body scss styles through ***moon-pattern
+@use "small-large-views/moon-molecules-and-organisms/a-moon-pattern-organism/moons-pattern";
+
+// import image for enlightment section with ***enlightenment-moon
+@use "small-large-views/moon-molecules-and-organisms/enlightenment-moon-organism/enlightenment-moon";
+
+// import image for about section with ***about-moon
+@use "small-large-views/moon-molecules-and-organisms/about-moon-organism/about-moon";
+
+// import image for participation section with ***participation-moon
+@use "small-large-views/moon-molecules-and-organisms/participation-moon-organism/participation-moon";
+
+// import image for benefits section with ***benefits-moon
+@use "small-large-views/moon-molecules-and-organisms/benefits-moon-organism/benefits-moon";
+
+// import image for requirements section with ***requirements-moon
+@use "small-large-views/moon-molecules-and-organisms/requirements-moon-organism/requirements-moon";
+
+// import for footer scss styles through ***footer
+@use "small-large-views/footer-organism/footer";

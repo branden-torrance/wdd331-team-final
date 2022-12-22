@@ -1,0 +1,146 @@
+/* ------------------------------------*\
+  #ARCHIVES ASIDE FOOTER MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section styles the archives aside and inserts planet icons next to 
+ * each archive entry.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.archives {
+  color: $primary;
+}
+
+.design-archives {
+  padding: 1rem;
+
+  /* inserts animated astronaut in large-view */
+  &::after {
+    @include mixins.breakpoint(large) {
+      @include mixins.insert-image("images/astronaut.svg", $width: 122px,
+      $height: 130px);
+      @include mixins.absolute($bottom: 12rem, $right: 12rem);
+
+      animation: floating-astronaut 15s linear infinite;
+    }
+    @include mixins.breakpoint(xlarge) {
+      animation: xlg-floating-astronaut 17s linear infinite;
+    }
+    @include mixins.breakpoint(xxlarge) {
+      animation: xxlg-floating-astronaut 22s linear infinite;
+    }
+  }
+
+  & ul li {
+    padding-left: 50px;
+    position: relative;
+  
+    &::before {
+      @include mixins.insert-image("images/new-planet.svg", inline-block,
+      contain, 35px);
+      @include mixins.absolute($top: 0, $left: 17px);
+
+      transform: rotate(-30deg);
+
+      /* creates mask on top of planet bullet point to get a shimmering
+       * animation */
+      -webkit-mask: linear-gradient(-60deg, #414241 30%, #0005, #414241 70%) right/300% 100%;
+      background-repeat: no-repeat;
+      animation: shimmer 2.5s infinite;
+    }
+  }
+}
+
+.viewall a {
+  &:hover {
+    &::before {
+      width: 75%;
+    }
+  }
+}
+
+/* sets up the animation for the floating astronaut */
+@keyframes floating-astronaut {
+  0%,
+  100% {
+    bottom: 12rem;
+  }
+
+  15% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+
+  30% {
+    transform: rotate(0deg) translateX(-18rem) rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(0deg) translateY(5rem) rotate(-15deg);
+  }
+
+  70% {
+    transform: rotate(0deg) translateX(10rem) rotate(0deg);
+  }
+  
+  85% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+}
+
+/* sets up the animation for the floating astronaut */
+@keyframes xlg-floating-astronaut {
+  0%,
+  100% {
+    bottom: 12rem;
+  }
+
+  10% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+
+  40% {
+    transform: rotate(0deg) translateX(-30rem) rotate(0deg);
+  }
+
+  70% {
+    transform: rotate(0deg) translateY(5rem) rotate(-15deg);
+  }
+
+  80% {
+    transform: rotate(0deg) translateX(10rem) rotate(0deg);
+  }
+  
+  90% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+}
+
+/* sets up the animation for the floating astronaut */
+@keyframes xxlg-floating-astronaut {
+  0%,
+  100% {
+    bottom: 12rem;
+  }
+
+  10% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+
+  40% {
+    transform: rotate(0deg) translateX(-45rem) rotate(0deg);
+  }
+
+  70% {
+    transform: rotate(0deg) translateY(5rem) rotate(-15deg);
+  }
+
+  80% {
+    transform: rotate(0deg) translateX(10rem) rotate(0deg);
+  }
+  
+  90% {
+    transform: rotate(0deg) translateY(-10rem) rotate(25deg);
+  }
+}

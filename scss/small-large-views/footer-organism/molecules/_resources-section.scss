@@ -1,0 +1,77 @@
+/* ------------------------------------*\
+  #RESOURCES ASIDE FOOTER MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section styles the resources aside and inserts planet icons next to 
+ * each resource listed.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.resources {
+  color: $accent1;
+}
+
+.zen-resources {
+  padding: 1rem; /* changed from padding-left to mathc other asides */
+
+  & ul li {
+    padding-left: 50px;
+    position: relative;
+  
+    &::before {
+      @include mixins.insert-image("images/new-planet.svg", inline-block,
+      contain, 35px);
+      @include mixins.absolute($top: 0, $left: 15px);
+      
+      transform: rotate(-30deg);
+      
+      /* creates mask on top of planet bullet point to get a shimmering animation */
+      -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+      background-repeat: no-repeat;
+      animation: shimmer 2.5s infinite;
+    }
+  }
+}
+
+.view-css a {
+  &:hover {
+    &::before {
+      width: 80%;
+    }
+  }
+}
+
+.css-resources a {
+  &:hover {
+    &::before {
+      width: 73%;
+    }
+  }
+}
+
+.zen-faq a {
+  &:hover {
+    &::before {
+      width: 42%;
+    }
+  }
+}
+
+.zen-submit a {
+  &:hover {
+    &::before {
+      width: 75%;
+    }
+  }
+}
+
+/* shimmering animation for bullet point planet */
+@keyframes shimmer {
+  100% { -webkit-mask-position: left; }
+  
+  50% {
+    transform: rotate(-20deg) translateX(-.25rem);
+  }
+}

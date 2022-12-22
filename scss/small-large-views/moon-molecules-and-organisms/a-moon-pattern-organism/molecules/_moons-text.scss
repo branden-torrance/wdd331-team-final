@@ -1,0 +1,45 @@
+/* ------------------------------------*\
+  #BODY'S TEXT MOONS MOLECULES
+\*------------------------------------ */
+
+/** 
+ * This section styles and positions the titles of sections and the sections
+ * paragraphs and links.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+.main {
+  padding: 1rem;
+}
+
+.preamble {
+  padding: 1rem;
+
+  & h3 {
+    color: $primary;
+  }
+}
+
+.explanation h3 {
+  color: $accent1;
+}
+
+.participation h3 {
+  color: $accent2;
+  padding-top: 2.5rem;
+}
+
+.benefits h3 {
+  color: $primary;
+  padding-top: 2.5rem;
+}
+
+.requirements h3 {
+  color: $accent1;
+  padding-top: 2.5rem;
+}
+
+.main a {
+  @include mixins.font(1.4rem);
+}

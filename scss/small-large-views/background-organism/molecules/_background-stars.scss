@@ -1,0 +1,24 @@
+/* ------------------------------------*\
+  #STARS BACKGROUND MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section creates the starry background.
+ */
+@use "../../../base-units/mixins";
+@use "../../../base-units/variables" as *;
+
+body {
+  background-color: $background-color;
+  background-image:
+    radial-gradient($text-light, rgb(255 255 255 / 20%) 2px, transparent 40px),
+    radial-gradient($text-light, rgb(255 255 255 / 15%) 1px, transparent 30px),
+    radial-gradient($text-light, rgb(255 255 255 / 10%) 2px, transparent 40px),
+    radial-gradient(
+      rgb(255 255 255 / 40%),
+      rgb(255 255 255 / 10%) 2px,
+      transparent 30px
+    );
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}

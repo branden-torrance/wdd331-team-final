@@ -1,0 +1,35 @@
+// BASE UNITS
+// This is a list of Sass variables for use in scss files
+// import Londrina Solid for headings font & Gemunu Libre for the body font
+@import "https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap";
+
+// fonts variables
+$fonts-headline: var(--fonts-headline);
+$fonts-body: var(--fonts-body);
+
+// project main color variables
+$background-color: var(--background-color);
+$primary: var(--primary);
+$accent1: var(--accent1);
+$accent2: var(--accent2);
+$grey-sidebar: var(--grey-sidebar);
+$text-dark: var(--text-dark);
+$text-darkest: var(--text-darkest);
+$text-light: var(--text-light);
+$p-link: var(--p-link);
+
+// text shadows colors derived from moon svg colors
+$enlightenment-light: var(--enlightenment-light);
+$about-light: var(--about-light);
+$participation-light: var(--participation-light);
+$benefits-light: var(--benefits-light);
+$requirements-light: var(--requirements-light);
+
+// set screen widths or breakpoint sizes
+// only Sass variables because CSS variables can't be used in media queries
+$break-small: 1129px;
+$break-medium: 715px;
+$break-large: 1130px;
+$break-xlarge: 1240px;
+$break-xxlarge: 1375px;

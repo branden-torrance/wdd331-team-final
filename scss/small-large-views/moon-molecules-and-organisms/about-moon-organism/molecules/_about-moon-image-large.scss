@@ -1,0 +1,54 @@
+/* ----------------------------------------------*\
+  #MOON LARGE-VIEW ABOUT MOON MOLECULES
+\*---------------------------------------------- */
+
+/** 
+ * This section inserts the moon image around the planet on the left side and 
+ * creates the large central moon image with the About section's text inside it
+ * when the smaller moon is hovered over.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+/* inserts the About moon on the left side of the planet */
+.explanation {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    @include mixins.insert-image("images/red-white-moon.svg", $width: 150px);
+    @include mixins.absolute($left: 50%, $top: -2rem);
+
+    margin-left: -500px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px $about-light;
+
+    &:hover::before {
+      @include mixins.absolute($right: 50%, $top: 8%);
+      @include mixins.insert-image("images/red-white-moon.svg", $width: 630px);
+
+      margin-right: -740px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 90px 50px $about-light;
+      z-index: 2;
+    }
+
+    /* absolute position for all & placement for first paragraph */
+    &:hover p {
+      @include mixins.absolute($right: 50%, $top: 75%);
+
+      margin-right: -672px;
+      width: 490px;
+      display: block;
+      text-align: center;
+      text-shadow:
+        1px 1px 15px $background-color,
+        -1px -1px 15px $background-color;
+      z-index: 3;
+    }
+
+    /* position the second paragraph */
+    & p:nth-child(3) {
+      top: 219%;
+    }
+  }
+}

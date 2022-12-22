@@ -1,0 +1,161 @@
+/* ------------------------------------*\
+  #ATOMS BASE UNITS
+\*------------------------------------ */
+
+/** 
+ * This is the segment for the base elements or "atoms" as a foundation
+ * for the CSS code.
+ */
+@use "variables" as *; // this puts all the variables in the global namespace.
+@use "mixins";
+
+// these styles here should describe how the atoms (elements)
+// should appear most of the time.
+// They can be overridden at the molecule (block) as necessary
+body {
+  font-family: $fonts-body;
+  background-color: $background-color;
+  margin: .5rem;
+}
+
+h1,
+h3,
+h4 {
+  font-family: $fonts-headline;
+  margin: 0;
+}
+
+h1 {
+  @include mixins.font(2.5rem, $spacing: 1px);
+
+  text-align: center;
+  background-image: linear-gradient(10deg, $background-color, $primary, $background-color, $accent1, $background-color, $accent2, #000, $text-light);
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /*** Use the text as a mask for the background.
+  // This will show the gradient as a text color rather than element bg. ***/
+  background-clip: text;
+  -webkit-block-start: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  @include mixins.breakpoint(large) {
+    & {
+      font-size: 6rem;
+      color: $text-dark;
+      background: url("images/night-time.svg");
+      background-size: 20%;
+      background-repeat: repeat;
+      background-position: top;
+      background-clip: text;
+      -webkit-block-start: 0;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+    }
+  }
+}
+
+h2 {
+  @include mixins.font(1rem, bold, 1px, $text-light, italic);
+
+  text-align: center;
+  margin-top: -.5rem;
+  margin-left: 4.5rem;
+  @include mixins.breakpoint(large) {
+    & {
+      font-size: 3rem;
+      margin-left: 6.25rem;
+    }
+  }
+}
+
+h3 {
+  @include mixins.font(2.25rem, 200, 1px,);
+
+  padding: .5rem 0 .3rem;
+}
+
+// for styleguide
+h4 {
+  @include mixins.font(1.6rem, 200, 1px);
+ 
+  margin: 0.5rem 0;
+}
+
+p {
+  @include mixins.font(1.6rem, $spacing: .08rem, $color: $text-light, 
+  $height: 1.5rem);
+
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+ul {
+  /* added to expand asides in footer as screen enlarges */
+  @include mixins.flex;
+
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 1.75rem 0;
+}
+
+.intro a,
+.main a,
+.supporting a {
+  color: $p-link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline $accent1 2px;
+  }
+}
+
+.sidebar a {
+  @include mixins.font(1.6rem, $color: $p-link, $height: 1.5rem);
+  
+  text-decoration: none;
+  background-image:
+    linear-gradient(
+      to right,
+      $accent1,
+      $accent1 50%,
+      $p-link 50%
+    );
+  background-size: 200% 100%;
+  background-position: -100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    background-position: 0;
+
+    &::before {
+      width: 70%;
+    }
+  }
+  
+  &::before {
+    content: "";
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 50px;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+}

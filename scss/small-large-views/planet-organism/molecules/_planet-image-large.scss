@@ -1,0 +1,25 @@
+/* ------------------------------------*\
+  #PLANET LARGE-VIEW PLANET MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section inserts the planet into the section tag that holds the title 
+ * and opening paragraphs and then positions the planet behind them and puts
+ * the planet into the center of the large screen view.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.intro::before {
+  @include mixins.breakpoint(large) { /* keep this in large-view */
+    & {
+      @include mixins.insert-image("images/central-planet.svg", $width: 600px,
+      $height: 595px); /* insert planet image */
+      @include mixins.absolute($left: 50%); /* position */
+    
+      z-index: -1; /* position */
+      margin-left: -300px; /* position center the planet */
+      background-repeat: no-repeat;
+    }
+  }
+}

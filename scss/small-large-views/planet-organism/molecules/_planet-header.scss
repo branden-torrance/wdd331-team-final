@@ -1,0 +1,26 @@
+/* ------------------------------------*\
+  #TITLE PLANET MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section styles the header size and shapes it into a circle the size
+ * of the planet that the title is in. It also places the title in the center 
+ * of the planet, centers the header in the page horizontally and for
+ * large-view somewhat centers the header vertically.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+header {
+  border-radius: 50%; /* shape header circular */
+  padding: 6rem 0; /* center header in planet */
+  margin: 0 auto; /* center header horizontally in screen */
+  width: 267px; /* set width to planet width */
+  @include mixins.breakpoint(large) {
+    & {
+      width: 600px; /* set width to planet width */
+      padding: 12rem 0 0 .4rem; /* center header in planet */
+      margin-top: 12rem; /* lower header vertically in screen */
+    }
+  }
+}

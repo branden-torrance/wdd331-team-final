@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <pattern id="planet-stripes" patternUnits="userSpaceOnUse" x="100" y="0" width="200" height="500" viewBox="0 0">
+  <ellipse cx="100" cy="150" rx="100" ry="50" style="fill:#22b09d;" />
+ <ellipse cx="100" cy="130" rx="100" ry="50" style="fill:#80ddc8;" />
+  <ellipse cx="100" cy="120" rx="100" ry="50" style="fill:#baf5e4;" />
+  <ellipse cx="100" cy="115" rx="100" ry="50" style="fill:#22b09d;" />
+  <ellipse cx="100" cy="100" rx="110" ry="50" style="fill:#80ddc8;" />
+  <ellipse cx="100" cy="80" rx="110" ry="50" style="fill:#baf5e4" />
+  <ellipse cx="100" cy="70" rx="100" ry="50" style="fill:#22b09d;" />
+  <ellipse cx="100" cy="50" rx="100" ry="50" style="fill:#80ddc8;" />
+  <ellipse cx="100" cy="45" rx="100" ry="50" style="fill:#baf5e4;" />
+  <ellipse cx="100" cy="35" rx="100" ry="50" style="fill:#22b09d;" />
+  <ellipse cx="100" cy="15" rx="100" ry="50" style="fill:#80ddc8;" />
+  <ellipse cx="100" cy="5" rx="100" ry="50" style="fill:#baf5e4" />
+  <ellipse cx="100" cy="0" rx="100" ry="50" style="fill:#22b09d;" />
+   
+  
+    </pattern>
+  </defs>
+  <circle cx="200" cy="100" r="100"  fill="url(#planet-stripes)"/>
+    <path d="M100,100 C-140,130 550,130 300,100"
+          fill="none" stroke="#fd7f1d" stroke-width="20"/>
+  
+</svg>

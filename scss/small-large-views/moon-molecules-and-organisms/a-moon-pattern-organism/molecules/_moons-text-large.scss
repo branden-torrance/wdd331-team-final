@@ -1,0 +1,108 @@
+/* --------------------------------------*\
+  #BODY'S TEXT LARGE-VIEW MOONS MOLECULES
+\*-------------------------------------- */
+
+/** 
+ * This section controls the appearance of the paragraphs and their titles.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+// Added temporarily to place the link and have the headers out of the view
+.main {
+  @include mixins.breakpoint(large) {
+    margin-top: 10rem;
+  }
+}
+
+// Hides the paragraphs
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements {
+  @include mixins.breakpoint(large) { /* keep this in large-view */
+    & p {
+      display: none; /* conceals the sections paragraphs */
+    }
+
+    /* styles shared by all large-view titles in moons */
+    & h3 {
+      font-size: 130%;
+      text-align: center;
+      color: $text-darkest;
+      padding-top: 40%;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* enlarge title when hovered over and stop pulse animation */
+    &:hover h3 {
+      animation: none;
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* Styles the Enlightenment section title */
+.preamble h3 {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    padding: 35% 15% 25% 7%;
+    text-shadow:
+      1px 1px 10px $enlightenment-light,
+      -1px -1px 10px $enlightenment-light;
+  }
+}
+
+/* Styles the About section title */
+.explanation h3 {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    text-shadow: 1px 1px 10px $about-light, -1px -1px 10px $about-light;
+  }
+}
+
+/* Styles the Participation section title */
+.participation h3 {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    text-shadow:
+      1px 1px 10px $participation-light,
+      -1px -1px 10px $participation-light;
+  }
+}
+
+/* Styles the Benefits section title */
+.benefits h3 {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    text-shadow:
+      1px 1px 10px $benefits-light,
+      -1px -1px 10px $benefits-light;
+  }
+}
+
+/* Styles the Requirement section title */
+.requirements h3 {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    text-shadow:
+      1px 1px 10px $requirements-light,
+      -1px -1px 10px $requirements-light;
+  }
+}
+
+/* Sets up the actions for the title's pulsing */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,22 @@
+/* ------------------------------------*\
+  #PLANET SMALL-VIEW PLANET MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section inserts the planet into the section tag that holds the header 
+ * and opening paragraph and then positions the planet behind the title.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.intro::before {
+  @include mixins.breakpoint(small) { /* keep this in small-view */
+    @include mixins.insert-image("images/blue-moon.svg", $width: 270px,
+    $height: 265px); /* insert planet image */
+    @include mixins.absolute($left: 50%); /* position */
+
+    z-index: -1; /* position */
+    margin-left: -135px; /* position */
+    transform: rotate(0.2turn); /* position */
+  }
+}

@@ -1,0 +1,28 @@
+/* --------------------------------------------*\
+  #MOON SMALL-VIEW PARTICIPATION MOON MOLECULES
+\*-------------------------------------------- */
+
+/** 
+ * This section inserts the astronaut image into the HTML abbr within the 
+ * second paragraph of the section and positions the astronaut in the middle 
+ * of that paragraph on the right side and also styles the paragraph to wrap 
+ * around the astronaut for the small-view.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+.participation [title="HyperText Markup Language"]::before {
+  @include mixins.breakpoint(small) { /* keeps in small-view */
+    @include mixins.insert-image("images/astronaut.svg", $float: right,
+    $width: 122px, $height: 130px, $margin: 10px); /* insert astronaut image to 
+  right & create word wrapping */
+
+    margin-top: 2.75rem; /* position */
+  }
+}
+
+.participation a {
+  &::before {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+/* -------------------------------------*\
+  #ROCKET LARGE-VIEW BACKGROUND MOLECULE
+\*------------------------------------- */
+
+/** 
+ * This section inserts the large-view rocket svg that animates, 
+ * circling around the center planet.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+/* inserts the rocket in the center of the planet */
+.page-wrapper::after {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    @include mixins.insert-image(
+      "images/rocket-animated.svg", $width: 120px, $height: 150px);
+    @include mixins.absolute($left: 50%, $top: 14rem);
+
+    z-index: 1; /* place rocket behind the hover images */
+    margin-left: -60px; /* center the rocket over the planet */
+    animation: rocket-flight 10s linear infinite;
+  }
+}
+
+/* sets up the animation for the rocket to circle the planet */
+@keyframes rocket-flight {
+  0% {
+    transform: rotate(0deg) translateX(360px) rotate(155deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(360px) rotate(155deg);
+  }
+}

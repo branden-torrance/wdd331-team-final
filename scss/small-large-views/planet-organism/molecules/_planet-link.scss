@@ -1,0 +1,39 @@
+/* ------------------------------------*\
+  #DOWNLOADS PLANET MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section styles and positions the HTML and CSS download links and 
+ * sentence they are contained within.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.summary p:last-child {
+  @include mixins.font(.8rem, $height: normal);
+  
+  font-weight: 900;
+  margin-top: 17.5rem;
+  color: $text-light;
+  padding: 0 1rem;
+  @include mixins.breakpoint(small) {
+    & {
+      width: 9rem;      
+      margin-bottom: -1.5rem;
+    }
+  }
+  @include mixins.breakpoint(large) {
+    & {
+      color: $text-light;
+      text-align: center;
+      margin-top: 3rem;
+    }
+  }
+
+  & a {
+    @include mixins.font(.8rem, $height: normal);
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

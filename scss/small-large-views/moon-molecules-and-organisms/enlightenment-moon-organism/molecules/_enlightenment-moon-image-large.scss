@@ -1,0 +1,67 @@
+/* ----------------------------------------------*\
+  #MOON LARGE-VIEW ENLIGHTENMENT MOON MOLECULES
+\*---------------------------------------------- */
+
+/** 
+ * This section inserts the moon image around the planet on the left side and 
+ * creates the large central moon image with the Enlightenment section's text 
+ * inside it when the smaller moon is hovered over.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+/* inserts the Enlightenment moon on the left side of the planet */
+.preamble {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    & {
+      @include mixins.insert-image(
+        "images/yellow-moon.svg", $width: 150px, $height: 152px);
+      @include mixins.absolute($left: 50%, $top: 24rem);
+
+      /* positions moon in fixed position from planet's center to create a *
+       * stable hover image positon **/
+      margin-left: -560px;
+    }
+
+    /* insertion & placement of large version of image to hold paragraphs */
+    &:hover::before {
+      @include mixins.absolute($right: 50%, $top: -270%);
+      @include mixins.insert-image("images/yellow-moon.svg", $width: 800px,
+      $height: 820px);
+
+      margin-right: -869px;
+      z-index: 2;
+    }
+
+    /* absolute position for all & placement for first paragraph */
+    &:hover p {
+      @include mixins.absolute($right: 50%, $top: -148.5%);
+
+      margin-right: -695px;
+      width: 450px;
+
+      /* shared characteristics of all Enlightenment paragraphs */
+      display: block;
+      text-align: center;
+      text-shadow:
+        1px 1px 20px $background-color,
+        -1px -1px 20px $background-color;
+      z-index: 3;
+    }
+
+    /* placement for second paragraph */
+    & p:nth-child(3) {
+      top: -83%;
+      margin-right: -750px;
+      width: 560px;
+    }
+
+    /* placement for third paragraph */
+    & p:nth-child(4) {
+      top: -18%;
+      width: 420px;
+      margin-right: -680px;
+    }
+  }
+}

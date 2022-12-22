@@ -1,0 +1,31 @@
+/* ------------------------------------*\
+  #FOOTER LINKS FOOTER MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section places the footer below the aside aside and styles the footer
+ * and creates the layout for the links in the footer.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.page-wrapper {
+  position: relative; /* place footer at bottom */
+}
+
+footer {
+  @include mixins.line(horizontal); /* put lines above & below links */
+  @include mixins.flex($gap-type: column-gap, $justify: center); /* layout */
+  @include mixins.absolute($bottom: 0); /* place footer at bottom */
+  
+  width: 100%; /* layout */
+  margin-left: -1rem; /* layout */
+}
+
+.zen-resources {
+  padding-bottom: 3rem; /* layout */
+}
+
+footer a:hover::before {
+  width: 0;
+}

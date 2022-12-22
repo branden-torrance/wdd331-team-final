@@ -1,0 +1,126 @@
+// #BASE UNITS
+// mixins to help speed up repeating patterns of code
+@use "variables" as *; // this puts all the variables in the global namespace.
+
+// #1 font mixin
+@mixin font($size: no, $weight: no, $spacing: no, $color: no, $style: no,
+$height: no, $font: no) {
+  @if $size != no {
+    font-size: $size;
+  }
+  @if $weight != no {
+    font-weight: $weight;
+  }
+  @if $spacing != no {
+    letter-spacing: $spacing;
+  }
+  @if $color != no {
+    color: $color;
+  }
+  @if $style != no {
+    font-style: $style;
+  }
+  @if $height != no {
+    line-height: $height;
+  } 
+  @if $font != no {
+    font-family: $font;
+  }
+}
+
+// #2 flex mixin
+@mixin flex($direction: row, $wrap: wrap, $gap-type: none, $gap: .75rem,
+$justify: no, $align: no) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  @if $justify != no {
+    justify-content: $justify;
+  }
+  @if $align != no {
+    align-content: $align;
+  }
+  @if $gap-type == column-gap {
+    #{$gap-type}: $gap;
+  }
+  @if $gap-type == row-gap {
+    #{$gap-type}: $gap;
+  }
+  @if $gap-type == gap {
+    #{$gap-type}: $gap;
+  }
+}
+
+// #3 adding a line mixin
+@mixin line($side, $color: $p-link, $thickness:3px, $spacing:.5rem) {
+  @if $side == top {
+    border-top: $thickness solid $color;
+    padding-top: $spacing;
+  }
+  @if $side == bottom {
+    border-bottom: $thickness solid $color;
+    padding-bottom: $spacing;
+  }
+  @if $side == horizontal {
+    border-top: $thickness solid $color;
+    border-bottom: $thickness solid $color;
+    padding: $spacing 0;
+  }
+}
+
+// #4 absolute position mixin
+@mixin absolute($top: no, $bottom: no, $left: no, $right: no) {
+  position: absolute;
+  @if $top != no {
+    top: $top;
+  }
+  @if $bottom != no {
+    bottom: $bottom;
+  }
+  @if $left != no {
+    left: $left;
+  }
+  @if $right != no {
+    right: $right;
+  }
+}
+
+// #5 inserting an image with before or after mixin
+@mixin insert-image($image, $display: block, $size: no, $width: 122px,
+$height: $width, $float: no, $shape: no, $margin: no) {
+  content: "";
+  background-image: url($image);
+  display: $display;
+  width: $width;
+  height: $height;
+  @if $size != no {
+    background-size: $size;
+  }
+  @if $float != no {
+    float: $float;
+  }
+  @if $shape == yes or $margin != no {
+    shape-outside: url($image);
+  }  
+  @if $margin != no {
+    shape-margin: $margin;
+  }
+}
+
+// #6 inserting a breakpoint mixin
+@mixin breakpoint($break) {
+  @if $break == small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @if $break == medium {
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+  @if $break == large {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @if $break == xlarge {
+    @media only screen and (min-width: $break-xlarge) { @content; }
+  }
+  @if $break == xxlarge {
+    @media only screen and (min-width: $break-xxlarge) { @content; }
+  }
+}

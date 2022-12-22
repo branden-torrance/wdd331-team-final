@@ -1,0 +1,24 @@
+/* -------------------------------------------*\
+  #MOON SMALL-VIEW REQUIREMENTS MOON MOLECULES
+\*------------------------------------------- */
+
+/** 
+ * This section inserts the moon image into the CSS abbr tag within the
+ * sections second pargraph and positions the moon on the right side towards 
+ * the bottom of that paragraph while wrapping the paragraph around the moon.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+.requirements p:nth-child(3) > [title="Cascading Style Sheets"]::before {
+  @include mixins.breakpoint(small) { /* keeps in small-view */
+    @include mixins.insert-image("images/orange-moon.svg", $margin: 10px, 
+    $float: right); /* insert moon image to right & create word wrapping */
+   
+    margin-top: 27.75rem; /* position */
+  }
+  @include mixins.breakpoint(medium) {
+    /* added to keep moon from going into footer in screen width over 715px */
+    margin-top: 17.5rem;
+  }
+}

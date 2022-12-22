@@ -1,0 +1,165 @@
+/* ------------------------------------*\
+  #BASE UNITS
+\*------------------------------------ */
+
+/** 
+ * This is the TABLE OF CONTENTS inserted as notes at the top of the CSS file
+ */
+
+/**
+ * CONTENTS
+ *__________
+ *
+ * ROOT
+ * Webpage Files........HTML(index.html) and CSS(style.css).
+ * Sass Compiler........CSS Map(style.css.map).
+ * GitHub Files.........README.md(project summary) and gitignore(local files).
+ * Stylelint............Dependencies(package.json).
+ * NPM Packages.........Version Unification(package-lock.json).
+ *_____________________________________________________________________________
+ *
+ * VS CODE
+ * Stylelint............Project rules for SCSS and CSS linting.
+ *_____________________________________________________________________________
+ *
+ * IMAGES
+ * Vector Images........SVG images inserted into HTML through CSS.
+ *_____________________________________________________________________________
+ *
+ * NODE MODULES
+ * NPM Packages.........Tool libraries needed for project tools.
+ *_____________________________________________________________________________
+ *
+ * SCSS
+ * Sass File............(style.scss) Main Sass file to compile CSS file.
+ *_____________________________________________________________________________
+ *
+ * BASE UNITS
+ * Table of Contents....(_table-of-contents) Project directory.
+ * Variables Root.......(_variables-root.scss) CSS variables.
+ * CSS Reset............(_css-reset.scss) Set same baseline for all browsers.
+ * Variables............(_variables.scss) Sass variables.
+ * Atoms................(_atoms.scss) Basic units from atomic design.
+ * Mixins...............(_mixins.scss) Useful mixins to consolidate code.
+ *_____________________________________________________________________________
+ *
+ * SMALL LARGE VIEWS
+ *___________________
+ *
+ * BACKGROUND ORGANISM
+ * Sass Subfiles........(_background.scss) Background molecules combined.
+ *
+ * BACKGROUND MOLECULES
+ * Rocket Small-View....(_background-rocket-small.scss) Webpage's rocket for 
+ * .....................small-view.
+ * Rocket Large-View....(_background-rocket-large.scss) Webpage's rocket for 
+ * .....................large-view and circling planet animation.
+ * Stars................(_background-stars.scss) Webpage's background stars.
+ *_____________________________________________________________________________
+ *
+ * PLANET ORGANISM
+ * Sass Subfiles........(_planet.scss) Planet molecules combined.
+ *
+ * PLANET MOLECULES
+ * Planet Small-View....(_planet-image-small.scss) Header's planet for small
+ * .....................-view.
+ * Planet Large-View....(_planet-image-large.scss) Header's and main central 
+ * .....................planet in large-view.
+ * Title................(_planet-header.scss) Header's title.
+ * Paragraph............(_planet-paragraph.scss) Header's introduction.
+ * Downloads............(_planet-link.scss) HTML & CSS download files.
+ *_____________________________________________________________________________
+ *
+ * MOON MOLECULES AND ORGANISMS
+ *______________________________
+ *
+ * A MOON PATTERN ORGANISM
+ * Sass Subfiles........(_moons-pattern.scss) Moons molecules combined.
+ *
+ * MOONS MOLECULES
+ * Body's Text..........(_moons-text.scss) Body's titles and paragraphs.
+ * Text Large-View......(_moons-text-larg.scss) Body's paragraphs.
+ *_____________________________________________________________________________
+ *
+ * ENLIGHTENMENT MOON ORGANISM
+ * Sass Subfiles........(_enlightenment-moon.scss) Moon molecules combined.
+ *
+ * ENLIGHTENMENT MOON MOLECULES
+ * Moon Small-View......(_enlightenment-moon-image-small.scss) "The Road to
+ *......................Enlightenment" section's yellow-moon.svg image design 
+ *......................for small viewing screens.
+ * Moon Large-view......(_enlightenment-moon-image-large.scss) "The Road to 
+ *......................Enlightenment" section's yellow-moon.svg image design 
+ *......................for large viewing screens, along with the hover effects 
+ *......................including projection of the central moon image with 
+ *......................the text.
+ *_____________________________________________________________________________
+ *
+ * ABOUT MOON ORGANISM
+ * Sass Subfiles........(_about-moon.scss) Moon molecules combined.
+ *
+ * ABOUT MOON MOLECULES
+ * Moon Small-View......(_about-moon-image-small.scss) "So What is This About?"
+ *......................section's red-white-moon.svg image in small-view.
+ * Moon Large-View......(_about-moon-image-large.scss "About" section's 
+ *......................red-white-moon.svg image design in large-view, along
+ *......................with the hover effects including projection of the 
+ *......................central moon image with the text.
+ *_____________________________________________________________________________
+ *
+ * PARTICIPATION MOON ORGANISM
+ * Sass Subfiles........(_participation-moon.scss) Moon molecules combined.
+ *
+ * PARTICIPATION MOON MOLECULES
+ * Moon Small-View......(_participation-moon-image-small.scss) "Participation"
+ *......................section's astronaut.svg image in small-view.
+ * Moon Large-view......(_participation-moon-image-large.scss) "Participation" 
+ *......................section's blue-moon.svg image design for large  
+ *......................viewing screens, along with the hover effects including
+ *......................projection of the central moon image with the text.
+ *_____________________________________________________________________________
+ *
+ * BENEFITS MOON ORGANISM
+ * Sass Subfiles........(_benefits-moon.scss) Moon molecules combined.
+ *
+ * BENEFITS MOON MOLECULES
+ * Moon Small-View......(_benefits-moon-image-small.scss) "Benefits" section's
+ *......................white-moon.svg image in small-view.
+* Moon Large-view.......(_benefits-moon-image-large.scss) "Benefits" section's
+ *......................white-moon.svg image design for large viewing screens, 
+ *......................along with the hover effects including projection of
+ *......................the central moon image with the text.
+ *_____________________________________________________________________________
+ *
+ * REQUIREMENTS MOON ORGANISM
+ * Sass Subfiles........(_requirements-moon.scss) Moon molecules combined.
+ *
+ * REQUIREMENTS MOON MOLECULES
+ * Moon Small-View......(_requirements-moon-image-small.scss) "Requirements"
+ *......................section's orange-moon.svg image design in small-view.
+ * Moon Large-View......(_requirements-moon-image-large.scss "Requirements"
+ *......................section's orange-moon.svg image design for large 
+ *......................viewing screens, along with the hover effects including
+ *......................projection of the central moon image with the text.
+ *_____________________________________________________________________________
+ *
+ * FOOTER ORGANISM
+ * Sass Subfiles........(_footer.scss) Planet molecules combined.
+ *
+ * FOOTER MOLECULES
+ * Designs Aside........(_designs-section.scss) "Select a Design" aside
+ *......................section's list of links.
+ * Archives Aside.......(_archives-section.scss) "Archives" aside section's
+ *......................list of links.
+ * Resources Aside......(_resources-section.scss) "Resources" aside section's
+ *......................list of links.
+ * Footer Links.........(_links-section.scss) The footer section's list of
+ *......................links.
+ *_____________________________________________________________________________
+ *
+ * STYLE GUIDE
+ * HTML.................(pattern-library.html) Style Guide Pages HTML file.
+ * Sass.................(style-pattern-library.scss) Sass file for Style Guide.
+ * Sass Compiler........CSS Map(style-pattern-library.css.map)
+ * CSS..................(style-pattern-library.css) CSS file for Style Guide.
+ **/

@@ -1,0 +1,88 @@
+/* -------------------------------------------*\
+  #MOON LARGE-VIEW REQUIREMENTS MOON MOLECULES
+\*------------------------------------------- */
+
+/** 
+ * This section inserts the moon image around the planet on the right side and 
+ * creates the large central moon image with the Requirements section's text 
+ * inside it when the smaller moon is hovered over.
+ */
+@use "../../../../base-units/variables" as *;
+@use "../../../../base-units/mixins";
+
+/* inserts the Requirements moon on the right side of the planet */
+.requirements {
+  @include mixins.breakpoint(large) {
+    /* keep this in large-view */
+    @include mixins.insert-image("images/orange-moon.svg", $width: 150px);
+    @include mixins.absolute($right: 50%, $top: 25rem);
+
+    /* positions moon in fixed position from planet's center to create a *
+     * stable hover image positon */
+    margin-right: -545px;
+
+    /* adds glow to headline planet */
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px $requirements-light;
+
+    /* inserts and places large version of image hold paragraphs */
+    &:hover::before {
+      @include mixins.absolute($right: 8%, $top: -380%);
+      @include mixins.insert-image("images/orange-moon.svg", $width: 880px);
+
+      margin-right: 90px;
+      background-repeat: no-repeat; /* prevents svg image from repeating */
+      border-radius: 50%;
+      box-shadow: 0 0 90px 50px $requirements-light;
+      z-index: 2;
+    }
+
+    &:hover a {
+      text-decoration-color: $p-link;
+    }
+
+    /* absolute positioning for all & placing first paragraph */
+    &:hover p {
+      @include mixins.absolute($right: 50%, $top: -325%);
+
+      margin-right: 189px;
+      width: 550px;
+
+      /* shared characteristics of all Requirements paragraphs */
+      display: block;
+      text-align: center;
+      text-shadow:
+        1px 1px 20px $background-color,
+        -1px -1px 20px $background-color;
+      z-index: 3;
+    }
+
+    /* placement for second paragraph */
+    & p:nth-child(3) {
+      top: -295px;
+      width: 820px;
+      margin-right: 55px;
+    }
+
+    /* placement for third paragraph */
+    & p:nth-child(4) {
+      width: 867px;
+      margin-right: 32px;
+      margin-top: 408px;
+    }
+
+    /* placement for fourth paragraph */
+    & p:nth-child(5) {
+      top: 43px;
+      width: 630px;
+      margin-right: 150px;
+    }
+
+    /* placement for fifth paragraph */
+    & p:nth-child(6) {
+      top: 188px;
+      width: 400px;
+      margin-right: 265px;
+    }
+  }
+}

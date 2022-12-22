@@ -1,0 +1,207 @@
+/* ------------------------------------*\
+  #DESIGNS ASIDE FOOTER MOLECULE
+\*------------------------------------ */
+
+/** 
+ * This section styles the designs aside and inserts planet icons next to 
+ * each design example.
+ */
+@use "../../../base-units/variables" as *;
+@use "../../../base-units/mixins";
+
+.select {
+  color: $accent2;
+}
+
+.design-selection {
+  @include mixins.line(top); /* put line above section */
+
+  padding: 1rem;
+  margin-top: 3rem; /* seperates footer from main body */
+
+  & .designer-name {
+    margin-left: .25rem;
+  }
+
+  & ul li {
+    padding-left: 3.125rem;
+    position: relative;
+  
+    &::before {
+      @include mixins.insert-image("images/new-planet.svg", inline-block,
+      contain, 35px);
+
+      /* changed $top to 0 from -6px due changes caused by flex */
+      @include mixins.absolute($top: 10px, $left: 15px);
+
+      transform: rotate(-30deg);
+
+      /* creates mask on top of planet bullet point to get a shimmering
+       * animation */
+      -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+      background-repeat: no-repeat;
+      animation: shimmer 2.5s infinite;
+    }
+
+    &:not(a) {
+      color: $text-light;
+    }
+  
+    & a {
+      margin: .5rem 0;
+    }
+  }
+}
+
+.sidebar .design-name {
+  display: block;
+  
+  /* changed from fit-content to max-content to keep it from prematurely
+   * wrapping in flex */
+  max-width: max-content;
+
+  &:hover::before {
+    bottom: 27px;
+  }
+
+  &::before {
+    bottom: 27px;
+  }
+}
+
+/* makes designer-name white */
+.sidebar .designer-name {
+  background-image:
+    linear-gradient(
+      to right,
+      $accent1,
+      $accent1 50%,
+      $text-light 50%
+    );
+
+  &::before {
+    left: 70px;
+  }
+}
+
+/* Design name underline widths */
+li:nth-of-type(1) .design-name {
+  &:hover {
+    &::before {
+      width: 79%;
+    }
+  }
+}
+
+li:nth-of-type(2) .design-name {
+  &:hover {
+    &::before {
+      width: 60%;
+    }
+  }
+}
+
+li:nth-of-type(3) .design-name {
+  &:hover {
+    &::before {
+      width: 23%;
+    }
+  }
+}
+
+li:nth-of-type(4) .design-name {
+  &:hover {
+    &::before {
+      width: 58%;
+    }
+  }
+}
+
+li:nth-of-type(5) .design-name {
+  &:hover {
+    &::before {
+      width: 52%;
+    }
+  }
+}
+
+li:nth-of-type(6) .design-name {
+  &:hover {
+    &::before {
+      width: 60%;
+    }
+  }
+}
+
+li:nth-of-type(7) .design-name {
+  &:hover {
+    &::before {
+      width: 80%;
+    }
+  }
+}
+
+li:nth-of-type(8) .design-name {
+  &:hover {
+    &::before {
+      width: 75%;
+    }
+  }
+}
+
+/* Designer name underline widths */
+li:nth-of-type(1) .designer-name {
+  &:hover {
+    &::before {
+      width: 65%;
+    }
+  }
+}
+
+li:nth-of-type(2) .designer-name {
+  &:hover {
+    &::before {
+      width: 55%;
+    }
+  }
+}
+
+li:nth-of-type(3) .designer-name {
+  &:hover {
+    &::before {
+      width: 67%;
+    }
+  }
+}
+
+li:nth-of-type(4) .designer-name {
+  &:hover {
+    &::before {
+      width: 65%;
+    }
+  }
+}
+
+li:nth-of-type(6) .designer-name {
+  &:hover {
+    &::before {
+      width: 67%;
+    }
+  }
+}
+
+li:nth-of-type(7) .designer-name {
+  &:hover {
+    &::before {
+      width: 38%;
+    }
+  }
+}
+
+li:nth-of-type(8) .designer-name {
+  &:hover {
+    &::before {
+      width: 55%;
+    }
+  }
+}
